@@ -1,0 +1,19 @@
+<h2>Completed Tasks</h2>
+<div class="task-list">
+    {{#if tasks}}
+        <ul>
+            {{#each tasks}}
+                <li><a href="task/{{this._id}}"> {{this.text}}</li></a>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No tasks have been completed</p>
+    {{/if}}
+</div>
+{{#if tasks}}
+    <div class="all-delete">
+        <form action="/deleteDone" method="POST">
+            <input class="all-delete-button" type="submit" value="Delete completed tasks">
+        </form>
+    </div>
+{{/if}}

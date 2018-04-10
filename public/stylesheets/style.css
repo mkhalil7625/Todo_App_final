@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.delete-form, .done-form{
+  display: inline-block;
+}
+.done-button{
+  background-color: lightskyblue;
+}
+.delete-button{
+  background-color: red;
+  color: white;
+}
+.all-done-button{
+  background-color: blue;
+}
+li{
+  padding: 10px;
+}
