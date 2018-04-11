@@ -1,7 +1,7 @@
 <h2>Tasks To Do</h2>
 <div class="add-task">
     <form id="add-task-form" action="/add" method="POST">
-        <input id="add-task-text"name="text" placeholder="todo task">
+        <input id="add-task-text"name="text" placeholder="todo task" required>
         <input id="add-task-button" name="add" type="submit"value="add">
     </form>
 </div>
@@ -46,3 +46,6 @@
         </form>
     </div>
 {{/if}}
+
+<!--remember to add a link to the jaascript file to the confirm delete function-->
+<script src="/javascripts/confirm_delete.js"></script>
