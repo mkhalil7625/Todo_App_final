@@ -11,3 +11,13 @@ deleteButtons.forEach(function (button) {
         }
     })
 });
+//same as above
+var deleteButtonCompleteTasks=document.querySelectorAll(".all-delete-button");
+deleteButtonCompleteTasks.forEach(function (button) {
+    button.addEventListener('click',function (ev) {
+        var okToDeleteAllTasks=confirm("Delete all task?");
+        if (!okToDeleteAllTasks){
+            ev.preventDefault();
+        }
+    })
+})
