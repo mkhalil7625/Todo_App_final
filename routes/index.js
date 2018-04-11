@@ -22,7 +22,8 @@ router.post('/add',function (req, res, next) {
     if (req.body.text) {
         //create a new task
         //goto the form(req.body), fetch the text in the text box whose name is text and set as incompleted
-        var t = Task({text: req.body.text, completed: false})
+        //get the date this task was created
+        var t = Task({text: req.body.text, completed: false, dateCreated:new Date()})
         //save the task as newTask and redirect to homepage if successful
         t.save().then((newTask) => {
             console.log("the new task is " + newTask);
@@ -128,4 +129,5 @@ router.post('/deleteDone',function (req, res, next) {
         next(err);
     });
 });
+
 module.exports = router;

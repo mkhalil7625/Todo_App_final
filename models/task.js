@@ -5,7 +5,9 @@ var Schema=mongoose.Schema;
 //define a schema and name it taskSchema- what fields will a task document have?
 var taskSchema=new Schema({
     text:String,
-    completed:Boolean
+    completed:Boolean,
+    dateCreated:Date,
+    dateCompleted:Date
 });
 //compile a taskSchema descritption into mongoose model
 //with the name Task

@@ -20,7 +20,8 @@
         <!--loops to create HTML elements -->
         {{#each tasks}}
             <!--make a page for each task -->
-            <li><a href="task/{{this._id}}"> {{this.text}}</li></a>
+        <!--add the datecreated to each task-->
+            <li><a href="task/{{this._id}}"> {{this.text}} created on {{this.dateCreated}}</li></a>
             <!--//create a form for each task item with a url /done_id-->
             <form class="done-form"action="/done" method="POST">
                 <input class="done-button" type="submit"name="done"value="Done!">

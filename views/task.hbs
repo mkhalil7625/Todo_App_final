@@ -3,8 +3,8 @@
 
 <div class="task-info">
 {{#if task.completed}}
-    <p>{{task.text}} is completed</p>
+    <p>{{task.text}} was created on {{task.dateCreated}}is completed on {{task.dateCompleted}}</p>
 {{else}}
-    <p>{{task.text}} is not yet completed</p>
+    <p>{{task.text}}was created on {{task.dateCreated}}and is not yet completed</p>
 {{/if}}
 </div>
