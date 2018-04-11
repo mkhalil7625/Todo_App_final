@@ -17,4 +17,10 @@
         </form>
     </div>
 {{/if}}
+<div class="flash-messages">
+    {{#if messages}}
+        <p class="error-message">{{messages.error}}</p>
+        <p class="info-message>">{{messages.info}}</p>
+    {{/if}}
+</div>
 <script src="/javascripts/confirm_delete.js"></script>

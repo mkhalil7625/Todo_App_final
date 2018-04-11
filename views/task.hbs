@@ -4,7 +4,24 @@
 <div class="task-info">
 {{#if task.completed}}
     <p>{{task.text}} was created on {{task.dateCreated}}is completed on {{task.dateCompleted}}</p>
+<!--delete form-->
+<form class="delete-done-form"action="/delete" method="POST">
+    <input class="delete-done-button" type="submit"name="delete"value="Delete">
+    <!--dont forget the _id and change from this to task-->
+    <input type="hidden" name="_id" value="{{task._id}}">
+</form>
 {{else}}
     <p>{{task.text}}was created on {{task.dateCreated}}and is not yet completed</p>
+<!--delete form-->
+    <form class="delete-done-form"action="/delete" method="POST">
+        <input class="delete-done-button" type="submit"name="delete"value="Delete">
+        <!--dont forget the _id and change from this to task-->
+        <input type="hidden" name="_id" value="{{task._id}}">
+    </form>
+    <form class="done-form"action="/done" method="POST">
+        <input class="done-button" type="submit"name="done"value="Done!">
+        <!--to send the data with _id-->
+        <input type="hidden" name="_id" value="{{task._id}}">
+    </form>
 {{/if}}
 </div>

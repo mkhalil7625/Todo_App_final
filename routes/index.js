@@ -124,6 +124,7 @@ router.post('/deleteDone',function (req, res, next) {
     //delete all tasks where complete:true
     Task.deleteMany({completed:true})
         .then(()=>{
+            req.flash('info',"All completed tasks deleted")
             res.redirect('/');
         }).catch((err)=>{
         next(err);
