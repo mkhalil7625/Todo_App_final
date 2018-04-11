@@ -32,6 +32,7 @@ router.post('/add',function (req, res, next) {
                 next(err);//forward error to error handler
             });
     }else {
+        req.flash('error','Please enter a task.')//flash an error message
       res.redirect('/')//else ignore and redierect to the home
     }
 });
@@ -42,6 +43,8 @@ router.post('/done', function (req, res, next) {
     //name it originalTask. original task has a value if a document with this _id was found
         .then((originalTask)=>{
           if(originalTask){
+              //flash info message when change a task to done
+              req.flash('info', originalTask.text+' marked as done!')
             res.redirect('/'); //after pressing the button redirect to the incomplete list of tasks
           }else {
             //report task not found with 404 status
@@ -72,6 +75,8 @@ router.post('/delete', function (req, res, next) {
 Task.findByIdAndRemove(req.body._id)
     //name as deletedTask
     .then((deletedTask)=>{
+        //info flash message if a task was deleted
+        req.flash('info',' Task deleted')
       if (deletedTask){//if true redierct to home page after deleting the task
         res.redirect('/');
       }else{//else report task not found with 404 status
@@ -88,6 +93,8 @@ router.post('/alldone',function (req, res, next) {
     //update all tasks from in-completed to completed
     Task.updateMany({completed:false},{completed:true})
         .then(()=>{
+            //info flash message once all done
+            req.flash('info', 'All tasks are done')
           res.redirect('/');
         }).catch((err)=>{
           next(err);

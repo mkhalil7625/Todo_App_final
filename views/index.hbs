@@ -5,6 +5,13 @@
         <input id="add-task-button" name="add" type="submit"value="add">
     </form>
 </div>
+<!--flash messages in case of having an error adding a task or to display info about a task-->
+<div class="flash-messages">
+    {{#if messages}}
+        <p class="error-message">{{messages.error}}</p>
+        <p class="info-message>">{{messages.info}}</p>
+    {{/if}}
+</div>
 <div class="task-list">
 
     <ol>
